@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[タイトル未定] - 開発フロー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <button id="theme-toggle-btn" class="btn">Toggle Theme</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <p class="header-meta">[PROJECT_PLAN] // DEVELOPMENT_WORKFLOW</p>
+            <h1>タイトル未定 - 開発フロー</h1>
+        </header>
+
+        <main>
+            <section id="phase-0">
+                <h2>フェーズ0：全体設計・基盤構築（共通タスク）</h2>
+                <div class="ui-panel">
+                    <p>両トラックの開発を開始する前に、プロジェクト全体の根幹となる仕様を定義します。これが全ての開発の基礎となります。</p>
+                    <ul>
+                        <li><strong>シナリオデータ構造の確定:</strong> 質疑応答セット（問い、真実、偽情報3種）のJSONスキーマを定義。</li>
+                        <li><strong>API仕様の策定:</strong> 両システム間の通信インターフェース（エンドポイント、リクエスト/レスポンス形式）を定義。</li>
+                    </ul>
+                </div>
+                <div class="flow-arrow vertical">↓</div>
+            </section>
+
+            <div class="workflow-grid">
+                <div class="track-a">
+                    <h2>トラックA：インタラクション・システム</h2>
+                    <p>担当：Unity, 演出チーム</p>
+                    
+                    <div class="ui-panel">
+                        <h4>A-1. アセット制作フェーズ</h4>
+                        <ul>
+                            <li>キャラクターモデル（Live2D）制作</li>
+                            <li>モーション（待機、問いかけ等）制作</li>
+                            <li>音声データ（合成音声 or 収録）準備</li>
+                            <li>結末用アニメーションムービー制作</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="ui-panel">
+                        <h4>A-2. 基本動作実装フェーズ</h4>
+                        <ul>
+                            <li>Unityシーンへのキャラクター配置</li>
+                            <li>基本モーション（待機、口パク）実装</li>
+                            <li>APIから取得した質問テキストの音声発話</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="ui-panel">
+                        <h4>A-3. 対話機能実装フェーズ</h4>
+                        <ul>
+                            <li>音声認識 or キーボード入力機能の実装</li>
+                            <li>入力された回答の復唱・感謝応答ロジック</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="ui-panel">
+                        <h4>A-4. 演出・連携フェーズ</h4>
+                        <ul>
+                            <li>結末ムービー再生トリガーの実装</li>
+                            <li>APIサーバーとの通信処理実装</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="track-b">
+                    <h2>トラックB：情報提供システム</h2>
+                    <p>担当：Web, LLM, DBチーム</p>
+                    <div class="ui-panel">
+                        <h4>B-1. データベース構築フェーズ</h4>
+                        <ul>
+                            <li>シナリオデータ構造に基づくDB設計</li>
+                            <li>全質疑応答セットのデータ投入</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="ui-panel">
+                        <h4>B-2. フロントエンド実装フェーズ</h4>
+                        <ul>
+                            <li>3情報源（AI検索, DeepSearch, 物理資料）のUI実装</li>
+                            <li>各UIとバックエンドAPIとの連携処理</li>
+                        </ul>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="ui-panel">
+                        <h4>B-3. バックエンド・LLM実装フェーズ</h4>
+                        <ul>
+                            <li>APIサーバーの構築</li>
+                            <li>DBからデータを取得・返却するロジック実装</li>
+                            <li>DeepSearch用LLM連携処理の実装</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flow-arrow horizontal">↓</div>
+
+            <section id="phase-4">
+                <h2>フェーズ4：統合テスト（共通タスク）</h2>
+                <div class="ui-panel">
+                    <p>両トラックの開発物がそれぞれ単体で動作するようになった後、最終的な結合テストを行い、展示体験全体の完成度を高めます。</p>
+                    <ul>
+                        <li><strong>システム接続:</strong> トラックAとトラックBを同一ネットワーク上で起動し、API通信を確立。</li>
+                        <li><strong>通しテスト:</strong> 来場者役がシナリオ全体を体験し、動作と演出を確認。</li>
+                        <li><strong>デバッグと調整:</strong> 発見されたバグの修正と、体験向上のための最終調整。</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <div class="navigation-menu">
+        <a href="index.html" class="btn">プロジェクト概要</a>
+        <a href="flow.html" class="btn">開発フロー</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

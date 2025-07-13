@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Exhibition Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <button id="theme-toggle-btn" class="btn">Toggle Theme</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <p class="header-meta">[PROJECT_VERITAS] // EXHIBITION_PLAN_v2.0</p>
+            <h1>タイトル未定</h1>
+            <p class="tagline">その善意が、未来を歪める。</p>
+        </header>
+
+        <main>
+            <section id="concept">
+                <div class="ui-panel">
+                    <h2>CONCEPT</h2>
+                    <p><strong>AIによる情報汚染と、それに無自覚に加担してしまう人間の危うさを暴く。</strong></p>
+                    <p>本展示は、来場者を意図的にミスリードする構造を持つ。来場者は、純粋な知的好奇心を持つ「子供」のメタファーであるキャラクターに、良かれと思って情報を教える。しかし、その情報源には巧妙な罠が仕掛けられており、来場者自身が情報汚染の媒介者となってしまう。自らの善意の行為が引き起こす予期せぬ結末を突きつけることで、AI時代の情報リテラシーとは単なる真偽判定能力ではなく、自らの思考と行動に責任を負う覚悟であることを問いかける。</p>
+                    <h3>MESSAGE</h3>
+                    <p>AIへの無批判な依存がもたらす思考停止と、汚染された情報が未来の世代に与える深刻な影響について警鐘を鳴らす。</p>
+                </div>
+            </section>
+            
+            <hr>
+
+            <section id="synopsis">
+                <div class="ui-panel">
+                    <h2>SYNOPSIS - 体験の流れ</h2>
+                    <p>来場者は、プロジェクターに映し出された無垢な子供のキャラクターから、ある問いを投げかけられる。その答えを探すため、ブースに設置された3つの情報源――「AI検索」「DeepSearch」「物理資料」――を自由に調査する。しかし、これらの情報源には、AIのハルシネーション（幻覚）、巧妙に生成された偽の出典、AIの影響を受けて歪められた物理資料など、様々な「嘘」が紛れ込んでいる。</p>
+                    <p>来場者は、自らが見つけ出した「答え」をキャラクターに教える。キャラクターはそれを純粋に信じ、喜ぶだろう。しかし、展示の最後に待ち受けるのは、絶対的な真実が刻まれた「石」。そこで自らが伝えた情報が偽りであった可能性を知る。振り返ると、プロジェクターの中の子供は、その偽りの情報を新たな「常識」として、次の世代へと無邪気に広め始めている。来場者は、自らの行為が情報汚染を加速させ、未来を歪めていく様を目の当たりにし、静かな恐怖を体験する。</p>
+                </div>
+            </section>
+            
+            <hr>
+
+            <section id="overview">
+                <h2>OVERVIEW</h2>
+                <div class="grid">
+                    <div class="ui-panel">
+                        <h3>登場人物</h3>
+                        <ul>
+                            <li><strong>無垢な子供（キャラクター）:</strong> 未来や次世代のメタファー。来場者からの情報を無批判に受け入れ、それを拡散する存在。来場者の行動の結果を映し出す鏡の役割を担う。</li>
+                        </ul>
+                    </div>
+                    <div class="ui-panel">
+                        <h3>構成要素（情報源という名の罠）</h3>
+                        <ul>
+                            <li><strong>AI検索インターフェイス:</strong> もっともらしい嘘（ハルシネーション）を生成する。</li>
+                            <li><strong>DeepSearchインターフェイス:</strong> 出典付きで回答するが、その出典自体がAIによって生成された偽情報である場合がある。</li>
+                            <li><strong>物理資料:</strong> 一見信頼性が高いが、一部はAIによって生成された文章で構成されており、 subtlyに内容が歪められている。</li>
+                            <li><strong>出口の石:</strong> 揺るぎない真実のソース。来場者が自らの誤りを認識する最後のトリガー。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience">
+                <h2>EXPERIENCE DESIGN</h2>
+                <div class="ui-panel">
+                    <h3>Core Experience</h3>
+                    <ol>
+                        <li><strong>問いかけ:</strong> 無垢な子供から、世界の真理に関する問いを投げかけられる。</li>
+                        <li><strong>調査と誤認:</strong> 来場者は善意で調査を開始するが、巧妙に配置された偽情報源に惑わされる。</li>
+                        <li><strong>伝達（加担）:</strong> 見つけ出した偽りの答えを、子供に教える。</li>
+                        <li><strong>発覚と戦慄:</strong> 「出口の石」で真実を知り、自らが情報汚染に加担した事実と、その恐ろしい結末（子供による偽情報の拡散）を目の当たりにする。</li>
+                    </ol>
+                    <h3 style="margin-top: var(--space-5);">発展（Extended Features）</h3>
+                    <ul>
+                        <li><strong>ハルシネーション率調整UI:</strong> 来場者が意図的にAIの「嘘つき度」を調整できる。信頼性の低い情報源から真実を見抜くゲーム性を追加。</li>
+                        <li><strong>マルチエンディング:</strong> 来場者の調査行動や選択した情報源、最終的な回答の誤りの度合いによって、子供の未来（情報の歪み方）が複数パターンに分岐する。</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <div class="navigation-menu">
+        <a href="index.html" class="btn">プロジェクト概要</a>
+        <a href="flow.html" class="btn">開発フロー</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
