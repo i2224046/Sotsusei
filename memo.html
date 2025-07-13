@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Exhibition Project - Memo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <button id="theme-toggle-btn" class="btn">Toggle Theme</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <p class="header-meta">[PROJECT_ANALYSIS] // POINTS_AND_ISSUES</p>
+            <h1>企画の特長と検討課題</h1>
+        </header>
+
+        <main>
+            <section id="points">
+                <h2>本企画の特長 (推しポイント)</h2>
+                
+                <div class="ui-panel">
+                    <h3>1. 親しみやすさとメッセージ性の両立</h3>
+                    <p>
+                        面白さに重点を置いた浅野ゼミっぽい展示と、メッセージ性が強く理解のハードルが少し高い近藤・野口ゼミっぽい展示、両者の長所を融合させることを目指します。
+                    </p>
+                </div>
+                
+                <div class="ui-panel">
+                    <h3>2. 「展示」である必要性</h3>
+                    <p>
+                        物理資料を体験に組み込むことで、スマートフォンだけでは完結しない、展示空間ならではの体験価値を創出します。
+                    </p>
+                </div>
+
+                <div class="ui-panel">
+                    <h3>3. AIを活かした新たな技術への挑戦</h3>
+                    <p>
+                        既存のUnityや静的サイトの知識を活かしつつ、キャラクターとの高度なインタラクションや動的なWebシステムの実装など、新たな技術領域に挑戦します。
+                    </p>
+                </div>
+            </section>
+
+            <hr style="margin: var(--space-7) 0;">
+
+            <section id="issues">
+                <h2>今後の検討課題 (未解決事項)</h2>
+
+                <div class="ui-panel">
+                    <h3>1. 導入におけるテーマ提示のバランス</h3>
+                    <p>
+                        本展示はAIの問題提起を目的としていますが、導入の仕方にジレンマがあります。
+                    </p>
+                    <ul>
+                        <li>最初に趣旨を伝えないと、体験者は「なぜこれをやらされているのか」が分からなくなる懸念があります。</li>
+                        <li>しかし、最初から趣旨を伝えると、体験者が意図を察してしまい、展示の核心である「AI検索を信じてしまう」という行為をしなくなる可能性があります。</li>
+                    </ul>
+                </div>
+
+                <div class="ui-panel">
+                    <h3>2. 体験フローの具体化</h3>
+                    <p>
+                        体験の後半部分において、具体的に定義すべき点が残っています。
+                    </p>
+                    <ul>
+                        <li>子供に教えた後、来場者を「石」での答え合わせにどう自然に誘導するか。</li>
+                        <li>子供が偽りの情報を他者に広めてしまう様子を、どのような演出で見せるか。</li>
+                        <li>もし来場者が真実にたどり着けた場合、展示の趣旨が伝わらなくなるため、その場合のフォローをどうするか。</li>
+                    </ul>
+                </div>
+                <div class="ui-panel">
+                    <h3>3. キャラクターの実装</h3>
+                    <p>
+                        キャラクターとの対話の自由をどこまで行うか？
+                    </p>
+                    <ol>
+                        <li>会話は固定化し、完全に動画として作る</li>
+                        <li>体験者の回答のみ復唱するシステムを組み込む。API経由でCOEIROINKにリアルタイム音声生成をするが、LLMは使わない</li>
+                        <li>LLMを使い、キャラクターとの会話の自由度を上げる(過剰実装？)</li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="nav-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

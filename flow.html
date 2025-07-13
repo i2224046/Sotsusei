@@ -44,7 +44,8 @@
                         <ul>
                             <li>キャラクターモデル（Live2D）制作</li>
                             <li>モーション（待機、問いかけ等）制作</li>
-                            <li>音声データ（合成音声 or 収録）準備</li>
+                            <li>音声データ（COEIROINK:MANA を利用）準備</li>
+                            <li>UnitとGeminiの連携？</li>
                             <li>結末用アニメーションムービー制作</li>
                         </ul>
                     </div>
@@ -119,13 +120,45 @@
                 </div>
             </section>
 
+            <hr style="margin: var(--space-7) 0;">
+
+            <section id="tech-details">
+                <h2>使用技術の詳細情報</h2>
+                <div class="ui-panel">
+                    <h3>API連携による動的インタラクションフロー</h3>
+                    <p>
+                        「キャラクターとの対話」は、LLM（大規模言語モデル）APIと音声合成APIを連携させることで実現します。
+                        Unityから各APIを呼び出し、ユーザーの入力に応じた応答を動的に生成・発話するまでの一連の処理は、以下の流れで実行されます。
+                    </p>
+                    <h4>処理フロー</h4>
+                    <ol>
+                        <li>
+                            <strong>応答テキストの生成 (Google Gemini API):</strong>
+                            Unityの<code>UnityWebRequest</code>を使用し、ユーザーの入力をGoogleのGemini APIへ送信します。APIから返却されたJSONレスポンスを解析し、キャラクターの応答テキストを取得します。
+                        </li>
+                        <li>
+                            <strong>音声合成クエリの生成 (COEIROINK API - <code>/audio_query</code>):</strong>
+                            ステップ1で取得した応答テキストを、ローカルPCで起動しているCOEIROINKエンジンの<code>/audio_query</code>エンドポイントに送信します。話者IDには「MANA」を指定し、アクセントやイントネーション情報を含むJSON形式の音声合成クエリを受け取ります。
+                        </li>
+                        <li>
+                            <strong>音声データの生成 (COEIROINK API - <code>/synthesis</code>):</strong>
+                            ステップ2で取得したクエリを、今度は<code>/synthesis</code>エンドポイントにPOSTリクエストとして送信します。これにより、最終的なWAV形式の音声データがバイト配列として返却されます。
+                        </li>
+                        <li>
+                            <strong>Unityでの再生:</strong>
+                            受け取ったWAVデータのバイト配列を、Unity内で再生可能な<code>AudioClip</code>オブジェクトに変換します。このクリップをキャラクターにアタッチされた<code>AudioSource</code>コンポーネントにセットし、再生することで発話を実現します。
+                        </li>
+                    </ol>
+                    <p>
+                        これら一連のネットワーク通信を伴う処理は、Unityのコルーチン機能を用いて非同期で実行されます。これにより、APIからの応答を待っている間もアプリケーションの動作が固まることなく、スムーズなユーザー体験を提供します。
+                    </p>
+                </div>
+            </section>
+
         </main>
     </div>
 
-    <div class="navigation-menu">
-        <a href="index.html" class="btn">プロジェクト概要</a>
-        <a href="flow.html" class="btn">開発フロー</a>
-    </div>
+    <div id="nav-placeholder"></div>
 
     <script src="script.js"></script>
 </body>
