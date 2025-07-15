@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[タイトル未定] - 進捗報告</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="nav-placeholder"></div>
+    <div class="theme-switcher">
+        <button id="theme-toggle-btn" class="btn">Toggle Theme</button>
+    </div>
+
+    <div class="container">
+        <header>
+            <p class="header-meta">[PROJECT_LOG] // PROGRESS_REPORT</p>
+            <h1>進捗報告</h1>
+        </header>
+
+        <main>
+            <section id="progress">
+                <h2>達成事項</h2>
+                
+                <div class="ui-panel">
+                    <h3>1. ウェブのテスト</h3>
+                    <p>
+                        ローカル環境で動作する、2種類のAIインターフェースのプロトタイプを実装しました。
+                    </p>
+                    <ul>
+                        <li><strong>チャットボット:</strong> 対話形式のAI。</li>
+                        <li><strong>検索風AI:</strong> 検索エンジンを模したUIのAI。</li>
+                    </ul>
+                    <p>
+                        これらのAIは、ローカルに構築したデータベースの情報を参照して応答することが可能です。
+                    </p>
+                </div>
+                
+                <div class="ui-panel">
+                    <h3>2. 音声生成</h3>
+                    <p>
+                        ローカル環境において、テキストからリアルタイムで音声を生成するシステムの構築に成功しました。
+                    </p>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

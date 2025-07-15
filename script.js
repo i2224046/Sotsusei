@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = [
         { href: 'index.html', text: 'プロジェクト概要' },
         { href: 'flow.html', text: '開発フロー' },
+        { href: 'task.html', text: 'やったこと' },
         { href: 'memo.html', text: 'メモ' }
     ];
 
